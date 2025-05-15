@@ -1,0 +1,20 @@
+h1{
+    background-color: blue;
+    color: white;
+    width: 200px;
+}
+h2{
+background-color: violet;
+color: brown;
+width: 50px;
+}
+h3{
+    background-color: turquoise !important;
+    color: black !important;
+    width: 75px;
+}
+p{
+    background-color: rebeccapurple;
+    color: aqua;
+    width: 200px;
+}
