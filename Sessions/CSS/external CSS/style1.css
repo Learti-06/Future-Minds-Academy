@@ -1,0 +1,15 @@
+.drop{
+    font-size: x-large;
+}
+
+.style{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.p1{
+    float: left;
+    font-size: 100px;
+    line-height: 1;
+    margin-right: 0.1px;
+}
