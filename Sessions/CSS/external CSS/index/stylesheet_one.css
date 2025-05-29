@@ -14,7 +14,7 @@ h3{
     width: 75px;
 }
 p{
-    background-color: rebeccapurple;
-    color: aqua;
+    background-color: rebeccapurple !important;
+    color: aqua !important;
     width: 200px;
 }
