@@ -18,7 +18,7 @@ nav {
     border-radius: 15px;
     transition: 1s;
 }
-nav:hover , .about:hover , .education:hover , .skills:hover , .hobby:hover , .projects:hover, footer:hover{
+nav:hover , .about:hover , .education:hover , .skills:hover , .hobby:hover , .projects:hover{
     background-color: rgb(170, 183, 227);
     color: black; 
     transition: 1s;
@@ -45,6 +45,14 @@ footer{
     border-radius: 15px;
     font-family: 'Courier New', Courier, monospace;
     color: white;
+    transition: 1s;
+}
+footer:hover{
+        background-color: rgb(170, 183, 227);
+    color: black; 
+    transition: 1s;
+    padding: 10px;
+    transition: 1s;
 }
 
 .project-1, .project-2, .project-3{
@@ -84,4 +92,9 @@ nav a{
     color: black;
     border-radius: 7.5px;
     background-color: rgb(109, 109, 177);
+    transition-duration: 1s;
+}
+nav a:hover{
+    transition: 1s;
+    padding: 3px;
 }
