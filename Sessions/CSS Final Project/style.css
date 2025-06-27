@@ -1,0 +1,60 @@
+body{
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 50px 1fr 40px;
+}
+    :root{
+        --primary-color: black;
+        --secondary-color: white;
+        --background-color: lightgray;
+        --color: gray;
+    }
+
+    .extra-info{
+        display: flex;
+        justify-content: space-between;
+    }
+aside{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    flex-direction: column;
+    grid-row: 1/3;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    height: 1170px;
+}
+.divider{
+    width: 200px;
+}
+.me{
+    border-radius: 50%;
+}
+header{
+    color: var(--color);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 240px;
+}
+.smart{
+    color: var(--primary-color);
+}
+footer{
+    color: var(--color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.name{
+    color: var(--primary-color);
+}
