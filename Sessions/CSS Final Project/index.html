@@ -12,18 +12,27 @@
 
 <body>
         <aside>
-                <p class="extra-info">Creative Leart</p>
+                <p class="extra-info"> <span class="material-icons">incomplete_circle</span>Creative Leart <span
+                                class="material-icons" id="invisible">expand_more</span></p>
                 <hr>
                 <p class="extra-info"><img src="/Sessions/CSS Final Project/images/photo-of-me.jpg" width="30px"
                                 class="me">Leart Mahmuti <span class="material-icons">expand_more</span> </p>
                 <hr class="divider">
-                <p class="extra-info"> <span class="material-icons">space_dashboard</span> Dashboard <span
+                <p class="extra-info" id="dashboard"> <span class="material-icons">space_dashboard</span> Dashboard <span
                                 class="material-icons">expand_more</span> </p>
-                <p class="extra-info">A Analytics</p>
-                <p class="extra-info">D Discover</p>
-                <p class="extra-info">S Sales</p>
-                <p class="extra-info">A Automotive</p>
-                <p class="extra-info">S Smart Home</p>
+
+                <p class="extra-info"><span class="big-letter">A</span> Analytics <span class="material-icons"
+                                id="invisible">expand_more</span></p>
+                <p class="extra-info"><span class="big-letter">D</span> Discover <span class="material-icons"
+                                id="invisible">expand_more</span></p>
+                <p class="extra-info"><span class="big-letter">S</span> Sales <span class="material-icons"
+                                id="invisible">expand_more</span></p>
+                <p class="extra-info"><span class="big-letter">A</span> Automotive <span class="material-icons"
+                                id="invisible">expand_more</span></p>
+                <div class="home">
+                        <p class="extra-info" id="smart-home"><span class="big-letter">S</span> Smart Home <span class="material-icons"
+                                        id="invisible">expand_more</span></p>
+                </div>
                 <hr class="divider">
                 <h1>Pages</h1>
                 <p class="extra-info"> <span class="material-icons">receipt_long</span>Pages <span
@@ -46,7 +55,8 @@
                                 class="material-icons">expand_more</span> </p>
                 <p class="extra-info"> <span class="material-icons">view_in_ar</span> Components <span
                                 class="material-icons">expand_more</span> </p>
-                <p class="extra-info"> <span class="material-icons">receipt_long</span> Changelog</p>
+                <p class="extra-info"> <span class="material-icons">receipt_long</span> Changelog <span
+                                class="material-icons" id="invisible">expand_more</span></p>
         </aside>
 
         <header>
@@ -55,17 +65,105 @@
                 </div>
 
                 <div>
-                        <textarea name="write" rows="2" cols="25" placeholder="Search here"></textarea>
+                        <textarea name="write" rows="2" cols="25" placeholder="Search here"
+                        class="search-wrap"></textarea>
                         <span class="material-icons">account_circle</span>
                         <span class="material-icons">settings</span>
+                        <span class="material-icons" id="notif">notifications</span>
+                        <p class="notifications-number">11</p>
                 </div>
         </header>
 
+        <main>
+                <div class="first-part">
+                        <div class="left">
+                                <div class="room">
+                                 <img src="images/bg-smart-home-1.jpg " class="photo-of-kitchen" alt="">
+                                 <div class="room-info">
+                                  <div class="camera">
+                                        <p><b>Cameras</b></p>
+                                </div>
+                                <div class="room-footer">
+                         <div class="type">
+                            <span class="kitchen">
+                                <p>Kitchen</p>
+                            </span>
+                            <p>Living</p>
+                            <p>Attic</p>
+                                </div>
+                                 <div>
+                            <span class="material-icons">more_vert</span>
+                          </div>
+                         </div>
+                    </div>
+                 </div>
+                        </div>
+                        <div class="right">
+                                <div class="weather">
+                                        <div class="weather-today">
+                                                <div class="weather-today-p">Weather Today</div>
+                                                <div><img src="images/icon-sun-cloud.png" alt="" class="sun"></div>
+                                        </div>
+                                        <div class="city">
+                                                <div><h1>San Francisco - 29°C</h1></div>
+                                                <div><h1>Sunny</h1></div>
+                                        </div>
+                                </div>
+                                <img src="images/graphics.jpeg" class="table">
+                        </div>
+                </div>
+
+                <div class="second-part">
+                        <div class="info">
+                                <p class="numbers"><span class="big-number">21</span><b>°C</b></p>
+                                <h4>Living Room</h4>
+                                <p class="light-gray">Temperature</p>
+                        </div>
+                        <div class="info">
+                                <p class="numbers"><span class="big-number">44</span><b>%</b></p>
+                                <h4>Outside</h4>
+                                <p class="light-gray">Humidity</p>
+                        </div>
+                        <div class="info">
+                                <p class="numbers"><span class="big-number">87</span><b>m<sup>3</sup></b></p>
+                                <h4>Water</h4>
+                                <p class="light-gray">Consumption</p>
+                        </div>
+                        <div class="info">
+                                <p class="numbers"><span class="big-number">417</span><b>GB</b></p>
+                                <h4>Internet</h4>
+                                <p class="light-gray">All devices</p>
+                        </div>
+                </div>
+
+                <div class="third-part">
+                        <div class="device-limit">
+                                <div>
+                                <h3>Device Limit</h3>
+                                <img src="images/first-graph.jpeg" alt="" width="280vw">
+                                <div class="device-photo">
+                                        <p>16°C</p> <p>Temperature</p><p>38°C</p>
+                                </div>
+                                </div>
+                                <div class="device-info">
+                                        <div class="current-temp"><p><b>Current Temperature</b></p> <p class="meas">21°C</p></div>
+                                        <hr>
+                                        <div class="humidity"><p><b>Humidity</b></p> <p class="meas">57%</p></div>
+                                </div>
+                        </div>
+
+
+                </div>
+        </main>
         <footer>
                 <p><span class="material-icons">copyright</span> 2025, made with <span
                                 class="material-icons">favorite</span> by <span class="name">Leart Mahmuti</span>.</p>
-                        <p>Creative Tim | About Us | Blog | More</p>
+                <p>Creative Tim | About Us | Blog | More</p>
         </footer>
+
+        <div class="settings">
+                <span class="material-icons">settings</span>
+        </div>
 </body>
 
 </html>
