@@ -46,7 +46,7 @@ aside {
     grid-row: 1/4;
     background-color: var(--secondary-color);
     border-radius: 10px;
-    height: 1170px;
+    height: 1275px;
 }
 
 #dashboard{
@@ -230,7 +230,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    margin-bottom: 3rem;
 }
 
 .device-limit{
@@ -319,6 +319,51 @@ main {
     padding: 8px;
     margin-right: 20px;
     border-radius: 5px;
+}
+
+.devider1{
+    width: 1200px;
+}
+.fourth-part{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin-left: 20px;
+}
+
+.card{
+    background-color: var(--secondary-color);
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.card:nth-child(3n +2){
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+.off-on{
+    display: flex;
+    justify-content: space-between;
+}
+.card-names{
+    color: var(--color);
+}
+.card-names:nth-child(3n+2){
+    color: var(--secondary-color);
+}
+.card-info{
+    color: var(--color);
+}
+
+.more-devices{
+    background-color: var(--secondary-color);
+    color: var(--color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 footer {
     color: var(--color);
