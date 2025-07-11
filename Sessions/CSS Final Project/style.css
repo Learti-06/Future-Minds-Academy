@@ -11,53 +11,60 @@ body {
 :root {
     --primary-color: black;
     --secondary-color: white;
-    --background-color: lightgray;
+    --background-color: #F6F6F6;
     --color: gray;
 }
 
-.extra-info {
-    display: flex;
-    justify-content: space-between;  
-    padding: 10px;
-}
-
-.extra-info .home{
-    padding: 0!important;
-}
-.big-letter{
-    font-size: large;
-    font-weight: bold;
-}
-
-.home{
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border-radius: 1.2rem;
-    padding: 0;
-}
-.extra-info:hover{
-    background-color: var(--background-color);
-}
 aside {
-    /* display: grid; */
     justify-content: center;
-    /* align-items: center; */
     overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: 200px;
     flex-direction: column;
-    /* grid-row: 1/4; */
     background-color: var(--secondary-color);
     border-radius: 10px;
     display: flex;
+    display: grid;
     height: 100vh;
-    
 }
 
-#dashboard{
+.aside-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+.aside-elements:hover {
+    background-color: var(--color);
+}
+
+.aside-elements:nth-child(10) {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+.big-letter {
+    font-size: large;
+    font-weight: bold;
+    padding-right: 0.7rem;
+}
+
+.material-icons.more {
+    margin-left: auto;
+    color: #EEEEEE;
+}
+
+.aside-pages {
+    padding: 0;
+}
+
+#dashboard {
     background-color: var(--background-color);
 }
-#smart-home:hover{
-    background-color: var(--primary-color);
-}
+
 #invisible {
     opacity: 0;
 }
@@ -71,7 +78,6 @@ aside {
 }
 
 header {
-    color: var(--color);
     background-color: var(--secondary-color);
     border-radius: 10px;
     display: flex;
@@ -80,7 +86,7 @@ header {
     position: fixed;
     top: 0;
     right: 0;
-    left: 240px;
+    left: 250px;
     z-index: 1;
 }
 
@@ -93,123 +99,127 @@ header {
     border-radius: 50%;
 }
 
-.smart-home {
-    color: var(--primary-color);
-}
-
 main {
     grid-column: 2/3;
     grid-row: 2/3;
     height: 93vh;
     overflow-y: scroll;
 }
-.first-part{
+
+.first-part {
     display: flex;
     flex-direction: row;
     margin-left: 25px;
 }
 
-.left{
+.left {
     display: flex;
     gap: 10px;
     margin-top: 4rem;
     width: 60%;
 }
-.room-footer{
+
+.room-footer {
     display: flex;
     align-items: center;
 }
-.room-info{
+
+.room-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     padding: 0 15px 15px 15px;
 }
-.room{
-    background-color: white;
+
+.room {
+    background-color: var(--secondary-color);
     border-radius: 15px;
 }
-.camera p{
+
+.camera p {
     font-size: 25px;
 }
 
-.kitchen{
+.kitchen {
     background-color: var(--secondary-color);
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
 
 }
-.type{
+
+.type {
     display: flex;
     gap: 70px;
-    background-color: #F7F5F6;
+    background-color:var(--background-color);
     border-radius: 15px;
     padding: 2px 20px 2px 20px;
-    color: #000000;
+    color: var(--primary-color);
 }
 
 .photo-of-kitchen {
-    position: relative;
-    top: -30px;
+    margin-top: -30px;
     width: 650px;
     border-radius: 20px;
     z-index: 0;
+    margin-left: 20px;
+    margin-right: 20px;
 }
-.right{
+
+.right {
     background-color: var(--secondary-color);
     width: 50%;
     margin-top: 4rem;
     border-radius: 20px;
-    justify-content: space-between;
 }
 
-.table{
+.table {
     width: 460px;
     padding-left: 60px;
 }
-.weather{
+
+.weather {
     background-color: var(--primary-color);
     border-radius: 20px;
     margin-top: -30px;
     height: 150px;
-    width: 100%;
-
+    width: 96%;
+    margin-left: 24px;
 }
 
-.city{
-    color: var(--secondary-color);
-    display: flex;
-    justify-content: space-between;
-}
-.weather-today{
+.weather-today {
     color: var(--background-color);
     display: flex;
     justify-content: space-between;
 }
-.weather-today-p{
+
+.weather-today-p {
     padding-top: 40px;
     padding-left: 20px;
 }
-.sun{
+
+.sun {
     width: 80px;
 }
 
-.city{
+.city {
     display: flex;
     justify-content: space-between;
     color: var(--secondary-color);
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
-.second-part{
+.second-part {
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-left: 20px;
 }
-.info{
+
+.info {
     background-color: var(--secondary-color);
     width: 300px;
     display: flex;
@@ -219,33 +229,36 @@ main {
     border-radius: 10px;
 }
 
-.numbers{
+.numbers {
     color: rgb(227, 47, 108);
 }
-.big-number{
+
+.big-number {
     font-size: xxx-large;
 }
-.light-gray{
+
+.light-gray {
     color: var(--color);
 }
 
-.third-part{
+.third-part {
     margin-left: 20px;
-    margin-top: 30px;
+    margin-top: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 3rem;
 }
 
-.device-limit{
+.device-limit {
     background-color: var(--secondary-color);
     display: flex;
     align-items: center;
     width: 640px;
     border-radius: 10px;
 }
-.device-photo{
+
+.device-photo {
     margin-left: 50px;
     margin-right: 60px;
     display: flex;
@@ -253,72 +266,84 @@ main {
     color: var(--color);
 }
 
-.device-info{
-   width: 500px;
+.device-info {
+    width: 500px;
     padding-left: 30px;
     padding-right: 20px;
 }
-.current-temp{
+
+.current-temp {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.humidity{
+
+.humidity {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.meas{
+
+.meas {
     color: var(--color);
 }
-.consumption{
+
+.consumption {
     background-color: var(--secondary-color);
     display: flex;
     align-items: center;
     width: 640px;
     border-radius: 10px;
 }
-.consumption-room{
+
+.consumption-room {
     display: flex;
     justify-content: space-between;
 }
-.consumption-info{
+
+.consumption-info {
     width: 500px;
     margin: 30px;
 
 }
-.rooms{
+
+.rooms {
     display: flex;
     justify-content: space-between;
 }
-.color-black{
-    background-color: black;
+
+.color-black {
+    background-color: var(--primary-color);
     padding: 8px;
     margin-right: 20px;
     border-radius: 5px;
 }
-.color-gray{
-    background-color: gray;
-    color: gray;
+
+.color-gray {
+    background-color: var(--color);
+    color: var(--color);
     padding: 8px;
     margin-right: 20px;
     border-radius: 5px;
 }
-.color-blue{
+
+.color-blue {
     background-color: rgb(32, 32, 238);
     color: rgb(32, 32, 238);
     padding: 8px;
     margin-right: 20px;
     border-radius: 5px;
 }
-.color-green{
+
+.color-green {
     background-color: rgb(27, 180, 27);
     color: rgb(27, 180, 27);
     padding: 8px;
     margin-right: 20px;
     border-radius: 5px;
 }
-.color-orange{
+
+.color-orange {
     background-color: orange;
     color: orange;
     padding: 8px;
@@ -326,42 +351,49 @@ main {
     border-radius: 5px;
 }
 
-.devider1{
+.devider1 {
     width: 1200px;
 }
-.fourth-part{
+
+.fourth-part {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     margin-top: 3rem;
     margin-bottom: 2rem;
     margin-left: 20px;
 }
 
-.card{
+.card {
     background-color: var(--secondary-color);
-    width: 200px;
+    width: 175px;
     border-radius: 10px;
     padding: 10px;
 }
-.card:nth-child(3n +2){
-    background-color: var(--primary-color);
+
+.card:nth-child(3n +2) {
+    background-color: #303236;
     color: var(--secondary-color);
 }
-.off-on{
+
+.off-on {
     display: flex;
     justify-content: space-between;
 }
-.card-names{
-    color: var(--color);
-}
-.card-names:nth-child(3n+2){
-    color: var(--secondary-color);
-}
-.card-info{
+
+.card-names {
     color: var(--color);
 }
 
-.more-devices{
+.card-names:nth-child(3n+2) {
+    color: var(--secondary-color);
+}
+
+.card-info {
+    color: var(--color);
+}
+
+.more-devices {
     background-color: var(--secondary-color);
     color: var(--color);
     border-radius: 10px;
@@ -369,7 +401,9 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+
 footer {
     color: var(--color);
     display: flex;
@@ -390,17 +424,49 @@ footer {
     background-color: var(--secondary-color);
     border-radius: 50px;
     padding: 10px;
+    cursor: pointer;
 }
 
-
-/* teacher */
-.aside-elements{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   padding: 0.5rem;
+.button {
+    background-color: var(--color);
+    width: 70px;
+    height: 35px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
 }
 
-.material-icons.more{
-margin-left: auto;
+.button::before {
+    position: absolute;
+    content: '';
+    background-color: var(--secondary-color);
+    width: 35px;
+    height: 35px;
+    border-radius: 200px;
+    transition: 0.2s;
+}
+
+#check:checked+.button,
+#check1:checked+.button,
+#check2:checked+.button,
+#check3:checked+.button,
+#check4:checked+.button {
+    background-color: var(--primary-color);
+}
+
+#check:checked+.button::before,
+#check1:checked+.button::before, 
+#check2:checked+.button::before,
+#check3:checked+.button::before, 
+#check4:checked+.button::before {
+    transform: translateX(37px);
+}
+
+#check,
+#check1,
+#check2,
+#check3,
+#check4 {
+    display: none;
 }
