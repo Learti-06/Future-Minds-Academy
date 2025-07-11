@@ -1,5 +1,7 @@
 body {
     background-color: var(--background-color);
+    overflow-y: hidden;
+    height: 100vh;
     display: grid;
     grid-template-columns: 220px 1fr;
     grid-template-rows: 50px 1fr 40px;
@@ -37,16 +39,17 @@ body {
     background-color: var(--background-color);
 }
 aside {
-    display: grid;
+    /* display: grid; */
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     overflow-y: scroll;
-    scroll-padding: 100px;
     flex-direction: column;
-    grid-row: 1/4;
+    /* grid-row: 1/4; */
     background-color: var(--secondary-color);
     border-radius: 10px;
-    height: 1275px;
+    display: flex;
+    height: 100vh;
+    
 }
 
 #dashboard{
@@ -97,6 +100,8 @@ header {
 main {
     grid-column: 2/3;
     grid-row: 2/3;
+    height: 93vh;
+    overflow-y: scroll;
 }
 .first-part{
     display: flex;
@@ -385,4 +390,17 @@ footer {
     background-color: var(--secondary-color);
     border-radius: 50px;
     padding: 10px;
+}
+
+
+/* teacher */
+.aside-elements{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   padding: 0.5rem;
+}
+
+.material-icons.more{
+margin-left: auto;
 }
