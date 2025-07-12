@@ -11,7 +11,7 @@ body {
 :root {
     --primary-color: black;
     --secondary-color: white;
-    --background-color: #F6F6F6;
+    --background-color: lightgray;
     --color: gray;
 }
 
@@ -54,7 +54,7 @@ aside {
 
 .material-icons.more {
     margin-left: auto;
-    color: #EEEEEE;
+    color: lightgray;
 }
 
 .aside-pages {
@@ -78,8 +78,8 @@ aside {
 }
 
 header {
-    background-color: var(--secondary-color);
     border-radius: 10px;
+    background-color: var(--secondary-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -90,18 +90,84 @@ header {
     z-index: 1;
 }
 
-.notifications-number {
-    background-color: red;
-    color: var(--secondary-color);
-    position: fixed;
-    top: 0;
-    right: 0;
-    border-radius: 50%;
+.menu{
+    display: flex;
+    align-items: center;
+    color: var(--color);
 }
 
+.smart-color{
+    color: var(--primary-color);
+}
+.left-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.search-wrap{
+    position: relative;
+}
+
+.search-wrap label{
+    position: absolute;
+    top: 45%;
+    left: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.5s;
+    padding: 0 5px;
+    color: black;
+}
+
+.search-wrap input{
+    width: 170px;
+    height: 30px;
+    outline: none;
+    border: 2px solid var(--color);
+    border-radius: 5px;
+    margin-right: 8px;
+    background-color: var(--secondary-color);
+}
+
+.material-icons.header{
+    margin-left: 8px;
+}
+.material-icons.header:hover{
+    cursor: pointer;
+}
+.searchbar:focus{
+    border-color: rgb(227, 47, 108);
+}
+.search-wrap input:focus~label{
+    top: 0;
+    font-size: 12px;
+    color: rgb(227, 47, 108);
+    background-color: var(--secondary-color);
+}
+
+.icon-button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.notification-button{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    width: 20px;
+    color: var(--secondary-color);
+    border-radius: 200px;
+    cursor: pointer;
+}
 main {
+    margin-top: 30px;
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 1/3;
     height: 93vh;
     overflow-y: scroll;
 }
@@ -156,6 +222,10 @@ main {
     border-radius: 15px;
     padding: 2px 20px 2px 20px;
     color: var(--primary-color);
+}
+
+.type:hover{
+    cursor: pointer;
 }
 
 .photo-of-kitchen {
@@ -216,7 +286,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 .info {
@@ -242,7 +312,7 @@ main {
 }
 
 .third-part {
-    margin-left: 20px;
+    margin-left: 25px;
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
@@ -361,7 +431,7 @@ main {
     justify-content: space-between;
     margin-top: 3rem;
     margin-bottom: 2rem;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 .card {
@@ -428,7 +498,7 @@ footer {
 }
 
 .button {
-    background-color: var(--color);
+    background-color: var(--background-color);
     width: 70px;
     height: 35px;
     border-radius: 200px;
@@ -441,10 +511,12 @@ footer {
     position: absolute;
     content: '';
     background-color: var(--secondary-color);
-    width: 35px;
-    height: 35px;
+    border: 2px solid gray;
+    width: 30px;
+    height: 30px;
     border-radius: 200px;
     transition: 0.2s;
+    margin: 0;
 }
 
 #check:checked+.button,
