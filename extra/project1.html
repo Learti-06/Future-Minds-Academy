@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Login</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb") no-repeat center center/cover;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 350px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.input-box {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 10px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: 16px;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #ddd;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  font-size: 12px;
+  color: #00ffea;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ffcc70, #ff6f91);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff6f91, #ffcc70);
+}
+
+.signup {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup a {
+  color: #70f5ff;
+  text-decoration: none;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h2>Welcome Back</h2>
+      <form>
+        <div class="input-box">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required>
+          <label>Password</label>
+        </div>
+        <button type="submit">Login</button>
+        <p class="signup">Dont have an account? <a href="#">Sign Up</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

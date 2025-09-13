@@ -13,6 +13,10 @@ body {
     --secondary-color: white;
     --background-color: lightgray;
     --color: gray;
+    --border-color: rgb(227, 47, 108);
+    --blue-color: rgb(32, 32, 238);
+    --green-color: rgb(27, 180, 27);
+    --orange-color: orange;
 }
 
 aside {
@@ -54,7 +58,7 @@ aside {
 
 .material-icons.more {
     margin-left: auto;
-    color: lightgray;
+    color: var(--background-color);
 }
 
 .aside-pages {
@@ -62,7 +66,7 @@ aside {
 }
 
 #dashboard {
-    background-color: var(--background-color);
+    background-color: var(--color);
 }
 
 #invisible {
@@ -79,7 +83,8 @@ aside {
 
 header {
     border-radius: 10px;
-    background-color: var(--secondary-color);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,10 +99,12 @@ header {
     display: flex;
     align-items: center;
     color: var(--color);
+    cursor: pointer;
 }
 
 .smart-color{
     color: var(--primary-color);
+    cursor: text;
 }
 .left-header{
     display: flex;
@@ -118,17 +125,17 @@ header {
     pointer-events: none;
     transition: 0.5s;
     padding: 0 5px;
-    color: black;
+    color: var(--color);
 }
 
 .search-wrap input{
     width: 170px;
     height: 30px;
     outline: none;
-    border: 2px solid var(--color);
+    border: 1px solid var(--color);
     border-radius: 5px;
     margin-right: 8px;
-    background-color: var(--secondary-color);
+    background-color: transparent;
 }
 
 .material-icons.header{
@@ -138,14 +145,16 @@ header {
     cursor: pointer;
 }
 .searchbar:focus{
-    border-color: rgb(227, 47, 108);
+    border-color: var(--border-color);
 }
 .search-wrap input:focus~label{
     top: 0;
     font-size: 12px;
-    color: rgb(227, 47, 108);
-    background-color: var(--secondary-color);
+    color: var(--border-color);
+    background-color: var(--background-color);
+    z-index: 2222;
 }
+
 
 .icon-button{
     position: relative;
@@ -163,6 +172,54 @@ header {
     color: var(--secondary-color);
     border-radius: 200px;
     cursor: pointer;
+}
+
+.icon-button>ul{
+    background-color: var(--secondary-color);
+    position: absolute;
+    z-index: 2;
+    width: 250px;
+    right: 5px;
+    top: 20px;
+    padding: 8px;
+    display: none;
+    list-style: none;
+}
+
+.icon-button>ul>li{
+    padding: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-button>ul>li:hover{
+    background-color: var(--background-color);
+}
+
+.icon-button:hover ul{
+    display: block;
+}
+
+.arrow-up {
+  position: absolute;
+  top: -11px;
+  right: 1px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid var(--secondary-color); 
+}
+
+.material-icons.panel{
+    margin-right: 10px;
+}
+
+.material-icons.menu{
+    opacity: 0;
+    cursor: default;
 }
 main {
     margin-top: 30px;
@@ -235,6 +292,7 @@ main {
     z-index: 0;
     margin-left: 20px;
     margin-right: 20px;
+    box-shadow: -2px 2px 10px 5px var(--background-color);
 }
 
 .right {
@@ -247,6 +305,7 @@ main {
 .table {
     width: 460px;
     padding-left: 60px;
+    margin-top: 10px;
 }
 
 .weather {
@@ -256,6 +315,7 @@ main {
     height: 150px;
     width: 96%;
     margin-left: 24px;
+    box-shadow: -2px 2px 10px 5px var(--background-color);
 }
 
 .weather-today {
@@ -289,6 +349,12 @@ main {
     margin-left: 25px;
 }
 
+.limit-photo{
+    width: 300px;
+}
+.consumption-photo{
+    width: 300px;
+}
 .info {
     background-color: var(--secondary-color);
     width: 300px;
@@ -298,9 +364,12 @@ main {
     justify-content: center;
     border-radius: 10px;
 }
+.info h4{
+    margin: 0 0 5px 0;
+}
 
 .numbers {
-    color: rgb(227, 47, 108);
+    color: var(--border-color);
 }
 
 .big-number {
@@ -309,6 +378,7 @@ main {
 
 .light-gray {
     color: var(--color);
+    margin: 0 0 20px 0;
 }
 
 .third-part {
@@ -331,6 +401,7 @@ main {
 .device-photo {
     margin-left: 50px;
     margin-right: 60px;
+    margin-top: -20px;
     display: flex;
     justify-content: space-between;
     color: var(--color);
@@ -342,12 +413,7 @@ main {
     padding-right: 20px;
 }
 
-.current-temp {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
+.current-temp,
 .humidity {
     display: flex;
     justify-content: space-between;
@@ -398,24 +464,24 @@ main {
 }
 
 .color-blue {
-    background-color: rgb(32, 32, 238);
-    color: rgb(32, 32, 238);
+    background-color: var(--blue-color);
+    color: var(--blue-color);
     padding: 8px;
     margin-right: 20px;
     border-radius: 5px;
 }
 
 .color-green {
-    background-color: rgb(27, 180, 27);
-    color: rgb(27, 180, 27);
+    background-color: var(--green-color);
+    color: var(--green-color);
     padding: 8px;
     margin-right: 20px;
     border-radius: 5px;
 }
 
 .color-orange {
-    background-color: orange;
-    color: orange;
+    background-color: var(--orange-color);
+    color: var(--orange-color);
     padding: 8px;
     margin-right: 20px;
     border-radius: 5px;
@@ -451,6 +517,52 @@ main {
     justify-content: space-between;
 }
 
+.button {
+    background-color: var(--background-color);
+    width: 70px;
+    height: 35px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.button::before {
+    position: absolute;
+    content: '';
+    background-color: var(--secondary-color);
+    border: 2px solid var(--color);
+    width: 30px;
+    height: 30px;
+    border-radius: 200px;
+    transition: 0.2s;
+    margin: 0;
+}
+
+#check:checked+.button,
+#check1:checked+.button,
+#check2:checked+.button,
+#check3:checked+.button,
+#check4:checked+.button {
+    background-color: var(--primary-color);
+}
+
+#check:checked+.button::before,
+#check1:checked+.button::before, 
+#check2:checked+.button::before,
+#check3:checked+.button::before, 
+#check4:checked+.button::before {
+    transform: translateX(37px);
+}
+
+#check,
+#check1,
+#check2,
+#check3,
+#check4 {
+    display: none;
+}
+
 .card-names {
     color: var(--color);
 }
@@ -483,8 +595,16 @@ footer {
     grid-row: 3/4;
 }
 
+footer p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .name {
     color: var(--primary-color);
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .settings {
@@ -493,52 +613,249 @@ footer {
     right: 10px;
     background-color: var(--secondary-color);
     border-radius: 50px;
-    padding: 10px;
+    padding: 12px 12px 10px 12px;
     cursor: pointer;
 }
 
-.button {
-    background-color: var(--background-color);
-    width: 70px;
-    height: 35px;
-    border-radius: 200px;
-    cursor: pointer;
-    position: relative;
-    transition: 0.2s;
+@media (max-width: 1000px){
+
+    body{
+        grid-column: 1fr;
+    }
+    aside{
+      opacity: 0;
+      margin-left: -100px;
+    }
+    
+    header{
+        left: 30px;
+        right: 54px;
+    }
+    .left-header{
+        justify-content: space-between;
+    }
+    .material-icons.responsive{
+        opacity: 0;
+        margin-left: -10px;
+    }
+    main{
+        flex-direction: column;
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+
+    .material-icons.menu{
+        opacity: 1;
+        color: var(--primary-color);
+        cursor: pointer;
+        margin-left: 20px;
+    }
+    .first-part{
+        flex-direction: column;
+    }
+
+    .left{
+        width: 700px;
+        margin: 70px 0 0 0;
+    }
+    .photo-of-kitchen{
+        width: 870px;
+        margin-bottom: 30px;
+    }
+    .type{
+        flex-direction: column;
+        width: 350px;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+    .kitchen{
+        padding: 0 160px 0 160px;
+        margin-top: 5px;
+    }
+    
+    .right{
+        width: 915px;
+    }
+    .table{
+        width: 750px;
+        height: 400px;
+    }
+
+    .second-part{
+        flex-wrap: nowrap;
+        margin-right: 25px;
+    }
+    .info{
+        width: 200px;
+    }
+
+    .third-part{
+        flex-direction: column;
+        gap: 30px;
+        padding-right: 30px;
+    }
+
+    .device-limit{
+        width: 917px;
+        gap: 70px;
+    }
+
+    .consumption{
+        width: 917px;
+        gap: 70px;
+    }
+
+    .devider1{
+        width: 950px;
+    }
+
+    .fourth-part{
+        flex-wrap: wrap;
+        margin-right: 25px;
+        gap: 30px;
+    }
+
+    .card{
+        width: 420px;
+    }
+
+    .more-devices{
+        width: 440px;
+    }
+
+    footer{
+        margin-left: 30px;
+        margin-right: 20px;
+        flex-direction: column;
+    }
+
+    .settings{
+        bottom: 55px;
+        right: 30px;
+    }
 }
 
-.button::before {
-    position: absolute;
-    content: '';
-    background-color: var(--secondary-color);
-    border: 2px solid gray;
-    width: 30px;
-    height: 30px;
-    border-radius: 200px;
-    transition: 0.2s;
-    margin: 0;
-}
+@media (max-width: 608px) {
+        body{
+        grid-column: 1fr;
+    }
+    aside{
 
-#check:checked+.button,
-#check1:checked+.button,
-#check2:checked+.button,
-#check3:checked+.button,
-#check4:checked+.button {
-    background-color: var(--primary-color);
-}
+        opacity: 0;
+        margin-left: -1000px;
+    }
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        left: 19px;
+        right: 49px;
+    }
 
-#check:checked+.button::before,
-#check1:checked+.button::before, 
-#check2:checked+.button::before,
-#check3:checked+.button::before, 
-#check4:checked+.button::before {
-    transform: translateX(37px);
-}
+    .left-header{
+        align-items: flex-start;
+    }
 
-#check,
-#check1,
-#check2,
-#check3,
-#check4 {
-    display: none;
+        .material-icons.responsive{
+        opacity: 0;
+        margin-left: -10px;
+    }
+
+    .search-wrap{
+        margin-right: 11rem;
+    }
+    
+    .icon-button>ul{
+        top: 17px;
+    }
+
+    main{
+        flex-wrap: wrap;
+        overflow-x: hidden;
+    }
+    .left{
+        margin-top: 7rem;
+        margin-left: -14px;
+    }
+    .photo-of-kitchen{
+        width: 500px;
+        height: 550px;
+    }
+    .type{
+        width: 200px;
+    }
+    .kitchen{
+        margin-top: 5px;
+        padding: 0 85px 0 85px;
+    }
+
+    .right{
+        width: 540px;
+        margin-left: -14px;
+    }
+
+    .weather{
+        margin-left: 10px;
+        height: 140px;
+    }
+    .table{
+        width: 400px;
+    }
+
+    .second-part{
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-left: 12px;
+    }
+
+    .info{
+        width: 250px;
+    }
+
+    .device-limit{
+        width: 540px;
+        gap: 0;
+        margin-left: -14px;
+    }
+    .limit-photo{
+        width: 200px;
+    }
+    .device-photo{
+        margin-left: 20px;
+        margin-right: 0;
+        margin-top: -20px;
+        padding: 0 30px 0 0;
+    }
+    .consumption{
+        width: 540px;
+        gap: 0;
+        margin-left: -14px;
+    }
+    .consumption-room{
+        margin: -80px 0 20px 10px;
+        font-size: 15px;
+    }
+    .consumption-photo{
+        width: 200px;
+    }
+
+    .devider1{
+        width: 501px;
+    }
+    .card{
+        width: 540px;
+        margin-left: -12px;
+    }
+    .off-on p{
+        margin-top: -5px;
+        font-size: 25px;
+    }
+
+    .more-devices{
+        margin-left: -12px;
+        width: 540px;
+    }
+    footer{
+        width: 500px;
+    }
 }
