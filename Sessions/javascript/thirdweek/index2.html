@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .even{
+            color: blue;
+        }
+
+        .odd{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+    <label for="numbers">Shkruaj një numër: </label><br>
+         <input type="number" id="number">
+         <button onclick="shfaqNumrat()">Shfaq numrat</button>
+
+         <div id="result"></div>
+    <script>
+        function shfaqNumrat(){
+
+
+
+            
+            let number = document.getElementById('number').value
+            let div = document.getElementById('result');
+            div.innerHTML = ''
+            
+
+
+            for(let i =1; i<= number ; i++){
+                let paragraph = document.createElement('p')
+                if(i % 2=== 0 ){
+                    paragraph.textContent= `${i} eshte cift`;
+                    paragraph.classList.add= ("even");
+                }
+
+                else{
+                    paragraph.textContent= `${i} eshte tek`;
+                    paragraph.classList.add= ("odd");
+                }
+
+                div.appendChild(paragraph)
+            }
+            
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .big{
+            color: green;
+        }
+
+        .small{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+        <label for="numbers">Shkruaj një numër: </label><br>
+         <input type="number" id="number">
+         <button onclick="llogaritShumen()">Llogarit</button>
+
+         <div id="result"></div>
+
+         <script>
+
+            function llogaritShumen(){
+            let number = document.getElementById('number').value
+            let resultDiv = document.getElementById('result');
+            let shuma = 0;
+
+            for(let i =1; i<= number ; i++){
+                shuma+= i;
+            }
+            let para = document.createElement("p");
+                if(shuma > 10){
+                    para.textContent = `Shuma eshte ${shuma} (me e madhe se 10)`;
+                    para.classList.add("big")
+                }
+
+                else{
+                    para.textContent = `Shuma eshte ${shuma} (me e vogel ose baraz se 10)`;
+                    para.classList.add("small")
+                }
+
+                div.appendChild(paragraph)
+            }
+            
+
+         </script>
+</body>
+</html>

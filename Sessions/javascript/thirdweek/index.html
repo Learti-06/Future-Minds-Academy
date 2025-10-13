@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="header">Hello</h1>
+    <p id="info">Hi</p>
+    <script>
+
+        let header =  document.querySelector('#header')
+        header.textContent = 'Pershendetje perseri!'
+        header.style.color = 'purple'
+
+        document.body.append(header)
+        let infoParagraph = document.getElementById('info')
+        infoParagraph.innerHTML = '<h1>'
+
+
+            let div = document.createElement('div')
+            let p = document.createElement('p')
+            p.textContent = 'We are inside the div we have created'
+
+            div.appendChild(p)
+            document.body.appendChild(div)
+
+            // div.remove() this removes the div that we created
+
+
+
+            
+        // let student = {
+        //     name: 'Leart',
+        //     surname: 'Mahmuti',
+        //     age: 16,
+
+        //     sayHello: function () {
+        //         console.log('Hello I am Leart Mahmuti I am a student in the Mehmet Isai middle school ')
+        //     }
+        // }
+
+        // student.sayHello()
+
+        // let circle = {
+        //     radius: 3,
+
+        //     getRadius: function() {
+        //         return this.radius
+        //     },
+
+        //     setRadius:function(){
+        //         return this.radius = r
+        //     },
+
+        //     getArea:function(){
+        //         return 3.14 * this.radius * this.radius
+        //     },
+
+        //     getPerimeter:function(){
+        //         return 2* 3.14* this.radius
+        //     }
+        // }
+
+
+        // circle.getArea()
+    </script>
+</body>
+
+</html>

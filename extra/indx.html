@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .movieModal {
+            display: none;
+            width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            position: absolute;
+            top: 20%;
+            left: 40%;
+        }
+
+        .movieModal header {
+            padding: 20px;
+            border-bottom: 2px solid gray;
+        }
+
+        .movieModal main {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .movieModal main {
+            width: 400px;
+            padding: 20px;
+        }
+
+        .movieModal select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .movieModal footer {
+            padding: 20px;
+            border-top: 2px solid gray;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .wrapper {
+            width: 600px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div>
+            <button id="addBTN">Add Movie</button>
+        </div>
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Movie Name</th>
+                    <th>Photo</th>
+                    <th>Reviews</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="allMovies">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="movieModal" id="movieModal">
+        <header>
+            <h2 id="modalTitle">Add Movie</h2>
+        </header>
+        <main>
+            <div><input type="number" id="year" placeholder="Year"></div>
+            <div><input type="text" id="movieTitle" placeholder="Movie Title"></div>
+            <div>
+                <select name="thumb" id="thumb">
+                    <option value="inside-out-2.jpeg">
+                        Thumb 1
+                    </option>
+                    <option value="the-taste-of-things.jpeg">
+                        Thumb 2
+                    </option>
+                </select>
+            </div>
+            <div><input type="number" id="reviews" placeholder="Reviews"></div>
+
+        </main>
+        <footer>
+            <button id="cancelBTN">Cancel</button>
+            <button id="submitBTN">Submit</button>
+        </footer>
+    </div>
+
+    <script>
+
+        let allData = [
+            { year: "2024", name: "Inside Out 2", thumb: "inside-out-2.jpeg", reviews: "104" },
+            { year: "2023", name: "The Taste of Things", thumb: "the-taste-of-things.jpeg", reviews: "303" }
+        ];
+
+        const allMovies = document.querySelector("#allMovies");
+        function listTable() {
+            let recordsHTML = '';
+            for (let i = 0; i < allData.length; i++) {
+                recordsHTML += `
+            <tr>
+                <td>${allData[i].year}</td>
+                <td>${allData[i].name}</td>
+                <td><img width="50" src="${allData[i].thumb}" alt=""></td>
+                <td>${allData[i].reviews}</td>
+                <td>
+                    <button onclick="editMovie(${i})">Edit</button>
+                    <button onclick="removeMovie(${i})">Remove</button>
+                </td>
+            </tr>
+        `;
+            }
+            allMovies.innerHTML = recordsHTML;
+        }
+        listTable();
+
+        const addBTN = document.querySelector("#addBTN");
+        const movieModal = document.querySelector("#movieModal");
+        const cancelBTN = document.querySelector("#cancelBTN");
+        const submitBTN = document.querySelector("#submitBTN");
+
+        const year = document.querySelector("#year");
+        const movieTitle = document.querySelector("#movieTitle");
+        const thumb = document.querySelector("#thumb");
+        const reviews = document.querySelector("#reviews");
+        const modalTitle = document.querySelector("#modalTitle");
+
+        let editAction = false;
+        let currentMovie = 0;
+
+        addBTN.addEventListener("click", () => {
+            modalTitle.textContent = "Add Movie";
+            editAction = false;
+            movieModal.style.display = "block";
+        });
+
+        cancelBTN.addEventListener("click", removeModal);
+
+        submitBTN.addEventListener("click", () => {
+            if (!editAction) {
+                let objMovie = {
+                    year: year.value,
+                    name: movieTitle.value,
+                    thumb: thumb.value,
+                    reviews: reviews.value
+                };
+                allData.push(objMovie);
+            } else {
+                allData[currentMovie] = {
+                    year: year.value,
+                    name: movieTitle.value,
+                    thumb: thumb.value,
+                    reviews: reviews.value
+                };
+                editAction = false;
+            }
+
+            removeModal();
+            listTable();
+        });
+
+        function removeModal() {
+            year.value = "";
+            movieTitle.value = "";
+            reviews.value = "";
+            thumb.value = "inside-out-2.jpeg";
+            modalTitle.textContent = "Add Movie";
+            movieModal.style.display = "none";
+        }
+
+
+        function editMovie(index) {
+            currentMovie = index;
+            editAction = true;
+            modalTitle.textContent = "Edit Movie";
+            movieModal.style.display = "block";
+
+            year.value = allData[index].year;
+            movieTitle.value = allData[index].name;
+            thumb.value = allData[index].thumb;
+            reviews.value = allData[index].reviews;
+        }
+
+        function removeMovie(index) {
+            allData.splice(index, 1);
+            listTable();
+        }
+
+
+    </script>
+</body>
+
+</html>

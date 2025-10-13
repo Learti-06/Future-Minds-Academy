@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = parseFloat(prompt('Shkruani numrin e pare:'));
+        let b = parseFloat(prompt('Shkruani numrin e dyte:'));
+        let operator = prompt('What operation do you want to apply?').toLowerCase();
+        let result;
+
+        switch(operator){
+            case '+':
+            result = a+b;
+            console.log(result)
+            break;
+
+            case '-':
+                result = a-b;
+                console.log(result)
+            break;
+
+             case '*':
+                result = a*b;
+                console.log(result)
+            break;
+
+             case '/':
+                result = a/b;
+                console.log(result)
+            break;
+
+            default:
+                console.log('You have entered a invalid operation!')
+        }
+    </script>
+</body>
+</html>
