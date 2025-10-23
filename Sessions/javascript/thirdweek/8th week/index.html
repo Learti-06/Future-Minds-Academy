@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="myBtn">Kliko!</button>
+    <!-- <input type="text" id="input" placeholder="shkruaj diqka...">
+    <p id="output"></p> -->
+    <div id="box" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+    <p id="text">Ky tekst do te fshihet kur klikon.</p>
+
+    <script>
+
+        let mybtn = document.getElementById('myBtn')
+
+        mybtn.addEventListener('dbclick',onClick)
+
+        function onClick(){
+            alert ('I am Clicked')
+        }
+
+        let box = document.getElementById('box')
+
+        box.addEventListener('mouseover',() =>{
+            box.style.backgroundColor= 'orange'
+        })
+                box.addEventListener('mouseleave',() =>{
+            box.style.backgroundColor= 'lightblue'
+        })
+
+    </script>
+</body>
+</html>
