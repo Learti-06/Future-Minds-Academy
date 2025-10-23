@@ -6,18 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="password" id="input" placeholder="">
-    <p id="output"></p>
+    <!-- <input type="password" id="input" placeholder="">
+    <p id="output"></p> -->
 
     <script>
 
-        let input = document.getElementById('input')
+        // let input = document.getElementById('input')
 
-        input.addEventListener('mouseover', () =>{
-            input.type = 'text'
-        })
-                input.addEventListener('mouseleave', () =>{
-            input.type = 'password'
+        // input.addEventListener('mouseover', () =>{
+        //     input.type = 'text'
+        // })
+        //         input.addEventListener('mouseleave', () =>{
+        //     input.type = 'password'
+        // })
+
+        document.addEventListener('keypress', ()=>{
+            let char = event.key
+            document.write(`Keni shenuar shkronjen ${char}`)
         })
 
     </script>
