@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="icon" href="6929237_instagram_icon.png">
+</head>
+<body>
+    
+    <script>
+        let title = document.title
+        let link= document.querySelector("link[rel*='icon']") || document.createElement('link');
+        let index = 0;
+        
+                function startNotification(message) {
+                    document.title = message;
+                    link.rel = 'icon';
+                    link.type = 'image/png';
+                    link.href = 'bell.png';
+                    const interval = setInterval(start, 1000);
+    }
+
+    </script>
+
+</body>
+</html>
