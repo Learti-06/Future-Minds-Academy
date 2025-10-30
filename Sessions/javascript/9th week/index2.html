@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="dogFactsList">
+  <!-- The dog facts will be inserted here -->
+</ul>
+
+<script>
+  fetch('https://dogapi.dog/api/v2/facts?limit=4')
+    .then(res => res.json())
+    .then((json) => {
+        processData((json.data));
+    });
+
+    function processData(data) {
+                let dogFactsList = document.createElement('ul')
+      
+        
+      data.forEach((item) => {
+        let listItem = document.createElement('li');
+        listItem.textContent = item.attributes.body; // Assuming the fact is in 'body'
+        dogFactsList.appendChild(listItem);
+      });
+
+      document.body.appendChild(dogFactsList);
+    }
+</script>
+</body>
+</html>
