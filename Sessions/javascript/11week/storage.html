@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="userInput"></h1>
+    <input type="text" id="input">
+    <button id="btn">Ruaj</button>
+    
+    <script>
+        const btn = document.getElementById('btn');
+        const input = document.getElementById('input');
+        const userInput = document.getElementById('userInput');
+        btn.addEventListener('click', function(){
+            const text = input.value;
+            localStorage.setItem('text', text);
+            userInput.textContent = `Pershendetje ${text}`
+
+        });
+
+        const text = localStorage.getItem('text');
+
+        if(emri){
+            console.log('Pershendetje', text);
+            input.value = text;
+        }
+
+    </script>
+</body>
+</html>

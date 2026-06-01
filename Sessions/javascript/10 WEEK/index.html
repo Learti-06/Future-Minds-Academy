@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    li.done { text-decoration: line-through; color: gray; }
+    button { margin-left: 5px; }
+  </style>
+  
+</head>
+<body>
+    <h1>Task Manager</h1>
+
+    <input type="text" id="taskInput" placeholder="Enter a task"> 
+    <button  onclick="addTask()">Add</button>
+
+    <h2>Tasks</h2>
+
+    <ul id="taskList"></ul>
+
+    <script>
+
+        const tasks = [];
+        const taskList = document.getElementById("taskList");
+
+        function showTask(){
+            taskList.innerHTML = "";
+            for(let i = 0; i< tasks.length; i++){
+                let li = document.createElement("li");
+                li.textContent = tasks[i].title;
+                if(tasks[i].done) li.classList.add("done");
+
+                let doneBtn = document.createElement("button");
+                doneBtn.textContent = "Done";
+                doneBtn.onclick = function() {
+                    tasks[i].done = true;
+                    showTask();
+                };
+            
+
+            let delBtn = document.createElement("button");
+            delBtn.textContent = "Delete";
+            delBtn.onclick = function() {
+                tasks.splice(i, 1);
+                showTask();
+            };
+
+            li.appendChild(doneBtn);
+            li.appendChild(delBtn);
+            taskList.appendChild(li);
+
+        };
+        }
+
+        function addTask() {
+            const input = document.getElementById("taskInput");
+            const title = input.value.trim();
+            if(title === "") {
+                alert("Please enter a task!");
+                return;
+            }
+            tasks.push({title: title, done: false});
+            input.value = "";
+            showTask();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h1>Menaxhimi i Notave</h1>
+    <input type="text" placeholder="Shkruaj noten (1-10)">
+    <button id="btn">Shto noten</button>
+    <h2 id="Notat">Notat:</h2>
+    <output id="output"> </output>
+    <h2>Mesatarja:</h2>
+    </div>
+    <br><br>
+    <output id="out"> </output>
+    <script>
+        let button = document.querySelector("button");
+        let input = document.querySelector("input");
+        let output = document.getElementById("output");
+        let out = document.getElementById("out");
+        let grades = [];
+
+        button.addEventListener("click", function() {
+            let grade = parseFloat(input.value);
+            if (grade >= 1 && grade <= 10) {
+                grades.push(grade);
+                output.textContent = grades.join(", ");
+                let sum = grades.reduce((a, b) => a + b, 0);
+                let average = (sum / grades.length).toFixed(2);
+                out.textContent = average;
+            } else {
+                alert("Ju lutem shkruani nje note mes numrit 1 dhe 10.");
+            }
+            input.value = "";
+            input.focus();
+        });
+    </script>
+</body>
+</html>
